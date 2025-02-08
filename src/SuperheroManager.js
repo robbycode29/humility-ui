@@ -24,18 +24,18 @@ const SuperheroManager = () => {
     }, []);
 
     const fetchSuperheroes = async () => {
-        const response = await axios.get('http://localhost:3000/api/v1/superheroes');
+        const response = await axios.get('https://humility-api-16176bd6e432.herokuapp.com/api/v1/superheroes');
         setSuperheroes(response.data);
     };
 
     const fetchStats = async () => {
-        const response = await axios.get('http://localhost:3000/api/v1/superheroes/stats');
+        const response = await axios.get('https://humility-api-16176bd6e432.herokuapp.com/api/v1/superheroes/stats');
         setStats(response.data);
     };
 
     const addSuperhero = async () => {
         try {
-            await axios.post('http://localhost:3000/api/v1/superheroes', newSuperhero);
+            await axios.post('https://humility-api-16176bd6e432.herokuapp.com//api/v1/superheroes', newSuperhero);
             fetchSuperheroes();
             fetchStats();
             setModalIsOpen(false);
@@ -47,7 +47,7 @@ const SuperheroManager = () => {
 
     const editSuperheroDetails = async () => {
         try {
-            await axios.patch(`http://localhost:3000/api/v1/superheroes/${editSuperhero.id}`, editSuperhero);
+            await axios.patch(`https://humility-api-16176bd6e432.herokuapp.com/api/v1/superheroes/${editSuperhero.id}`, editSuperhero);
             fetchSuperheroes();
             fetchStats();
             setEditModalIsOpen(false);
@@ -59,7 +59,7 @@ const SuperheroManager = () => {
 
     const confirmDeleteSuperhero = async () => {
         try {
-            await axios.delete(`http://localhost:3000/api/v1/superheroes/${deleteSuperhero.id}`);
+            await axios.delete(`https://humility-api-16176bd6e432.herokuapp.com/api/v1/superheroes/${deleteSuperhero.id}`);
             fetchSuperheroes();
             fetchStats();
             setDeleteModalIsOpen(false);
