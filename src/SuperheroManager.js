@@ -35,7 +35,7 @@ const SuperheroManager = () => {
 
     const addSuperhero = async () => {
         try {
-            await axios.post('https://humility-api-16176bd6e432.herokuapp.com//api/v1/superheroes', newSuperhero);
+            await axios.post('https://humility-api-16176bd6e432.herokuapp.com/api/v1/superheroes', newSuperhero);
             fetchSuperheroes();
             fetchStats();
             setModalIsOpen(false);
@@ -170,7 +170,7 @@ const SuperheroManager = () => {
                             <td className="px-4 py-2">{hero.name}</td>
                             <td className="px-4 py-2">{hero.superpower}</td>
                             <td className="px-4 py-2">{hero.humilityScore}</td>
-                            <td className="px-4 py-2 flex flex-row gap-2 justify-center items-center h-full min-w-[100px]">
+                            <td className="px-4 py-2 flex flex-row gap-2 justify-center items-center h-full min-w-[50px]">
                                 <button onClick={() => { setEditSuperhero(hero); setEditModalIsOpen(true); }}>
                                     <img src={editButton} alt="Edit" className="h-6 w-6" />
                                 </button>
