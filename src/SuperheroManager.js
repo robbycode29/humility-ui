@@ -166,16 +166,16 @@ const SuperheroManager = () => {
                     </thead>
                     <tbody>
                     {superheroes.map((hero) => (
-                        <tr key={hero.id}>
+                        <tr key={hero.id} onClick={() => { setEditSuperhero(hero); setEditModalIsOpen(true); }} className="sm:cursor-default cursor-pointer">
                             <td className="px-4 py-2">{hero.name}</td>
                             <td className="px-4 py-2">{hero.superpower}</td>
                             <td className="px-4 py-2">{hero.humilityScore}</td>
                             <td className="px-4 py-2 flex flex-row gap-2 justify-center items-center h-full">
-                                <button onClick={() => { setEditSuperhero(hero); setEditModalIsOpen(true); }}>
-                                    <img src={editButton} alt="Edit" className="h-3 w-3 sm:h-6 sm:w-6" />
+                                <button onClick={(e) => { e.stopPropagation(); setEditSuperhero(hero); setEditModalIsOpen(true); }} className="hidden sm:block">
+                                    <img src={editButton} alt="Edit" className="h-6 w-6" />
                                 </button>
-                                <button onClick={() => { setDeleteSuperhero(hero); setDeleteModalIsOpen(true); }}>
-                                    <img src={deleteButton} alt="Delete" className="h-3 w-3 sm:h-6 sm:w-6" />
+                                <button onClick={(e) => { e.stopPropagation(); setDeleteSuperhero(hero); setDeleteModalIsOpen(true); }} className="flex-grow sm:flex-grow-0">
+                                    <img src={deleteButton} alt="Delete" className="h-6 w-6" />
                                 </button>
                             </td>
                         </tr>
