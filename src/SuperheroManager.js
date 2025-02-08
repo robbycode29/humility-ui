@@ -170,12 +170,12 @@ const SuperheroManager = () => {
                             <td className="px-4 py-2">{hero.name}</td>
                             <td className="px-4 py-2">{hero.superpower}</td>
                             <td className="px-4 py-2">{hero.humilityScore}</td>
-                            <td className="px-4 py-2 flex flex-row gap-2 justify-center items-center h-full min-w-[50px]">
+                            <td className="px-4 py-2 flex flex-row gap-2 justify-center items-center h-full">
                                 <button onClick={() => { setEditSuperhero(hero); setEditModalIsOpen(true); }}>
-                                    <img src={editButton} alt="Edit" className="h-6 w-6" />
+                                    <img src={editButton} alt="Edit" className="h-3 w-3 sm:h-6 sm:w-6" />
                                 </button>
                                 <button onClick={() => { setDeleteSuperhero(hero); setDeleteModalIsOpen(true); }}>
-                                    <img src={deleteButton} alt="Delete" className="h-6 w-6" />
+                                    <img src={deleteButton} alt="Delete" className="h-3 w-3 sm:h-6 sm:w-6" />
                                 </button>
                             </td>
                         </tr>
